@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* TYPOGRAPHY */
+    --fontFamily : "Inter", sans-serif;
+    --fontSize-small : 0.875rem;
+    --fontSize-medium : 1rem;
+    --fontSize-large : 1.25rem;
+    --fontSize-xl: 1.5rem;
+    --lineHeight-medium : 24px;
+    --lineHeight-big : 32px;
+    --letterSpacing-small : -1px;
+    --letterSpacing-medium : -0.5px;
+    --letterSpacing-normal : -0.85px;
+    --fontWeight-medium : 500;
+    --fontWeight-semiBold : 600;
+    --fontWeight-Bold : 700;
+
+    /* COLOR */
+    --bgColor : #f8f8f8;
+    --bodyTextColor : #484848;
+    --headingTextColor : #111111;
+    --primaryButtonColor : #5beb46;
+    --onPrimaryButtonColor : #0d110c;
+    --borderColor : #e8e8e8;
+    --dowColor : rgba(0,0,0,0.12);
+
+    /* SPACING */
+    --space1 : 0.25rem;
+    --space2 : 0.5rem;
+    --space3 : 1rem;
+    --space4 : 1.5rem;
+    --space5 : 2rem;
+
+    /* Clamp Variables */
+    --minimumSize : 1rem;
+    --maximumSize : 2rem;
+    --clampVariable : clamp(var(--minimumSize), 1rem + 1vw, var(--maximumSize));
+
+    /* Shadow Variables */
+    --offsetX : 0;
+    --offsetY : 4px;
+    --dowBlur : 32px;
+    --dowSpread : 2px;
+}
+
+[data-theme="dark"]{
+    --bgColor : #02020f;
+    --bodyTextColor : #555353;
+    --headingTextColor : #db1a1a;
+    --primaryButtonColor : #000000;
+    --onPrimaryButtonColor : #ff02ea;
+    --borderColor : #e8e8e8;
+    --dowColor : rgba(9, 238, 17, 0.12);
+}
+
+.heading{
+    font-size: var(--clampVariable);
+    letter-spacing: var(--letterSpacing-small);
+    font-family: var(--fontFamily);
+    line-height: var(--lineHeight-big);
+    color: var(--headingTextColor);
+}
+
+.paragraph{
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize-medium);
+    line-height: var(--lineHeight-medium);
+    font-weight: var(--fontWeight-medium);
+    letter-spacing: var(--letterSpacing-normal);
+    color: var(--bodyTextColor);
+}
+
+button{
+    background-color: var(--primaryButtonColor);
+    color: var(--onPrimaryButtonColor);
+    padding: var(--space3) var(--space4);
+}
+
+.container{
+    width: calc(100% - 5rem);
+    height: auto;
+    background-color: var(--bgColor);
+    box-shadow: var(--offsetX) var(--offsetY) var(--dowBlur) var(--dowColor);
+    padding: calc(var(--space5) * 3);
+}
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --bgColor : #02020f;
+        --bodyTextColor : #555353;
+        --headingTextColor : #db1a1a;
+        --primaryButtonColor : #000000;
+        --onPrimaryButtonColor : #ff02ea;
+        --borderColor : #e8e8e8;
+         --dowColor : rgba(9, 238, 17, 0.12);
+    }
+}
